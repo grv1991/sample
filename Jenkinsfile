@@ -27,7 +27,7 @@ stages{
             stage ("Deploy to Production"){
               steps{
                 sshagent(['tomcat-dev']) {
-                sh 'ssh -i /home/Devops-Project.pem /var/lib/jenkins/workspace/Pipeline_Tomcat/webapp/target/*.war ec2-user@${params.tomcat_prod}:/usr/local/tomcat9/webapps'
+                sh 'ssh -i /home/Devops-Project.pem **/target/*.war ec2-user@${params.tomcat_prod}:/usr/local/tomcat9/webapps'
             }
         }
     }
